@@ -10,13 +10,11 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 
-
-public class CreateUserTests extends TestFixtures {
-    TestFixtures testFixtures = new TestFixtures();
+public class CreateUserTests {
+    UserTestFixtures userTestFixtures = new UserTestFixtures();
     String email;
     String password;
     String name;
-
     Response createdUserData;
 
     @Before
@@ -27,20 +25,23 @@ public class CreateUserTests extends TestFixtures {
     @After
     public void tearDown() {
         if(createdUserData.statusCode()==200) {
-            testFixtures.deleteUser(createdUserData.as(UserDeserializer.class).getAccessToken());
+            userTestFixtures.deleteUser(createdUserData.as(UserDeserializer.class).getAccessToken());
         }
     }
 
     @Test
-    @Description("Create new user with unique data. Return 200 and check email")
+    @Description("Create new user with unique data. Return 200 and check email, name, password")
     public void createUniqueUserExpected200(){
         email = "lutic@mail.ru";
         password = "123456";
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
-        createdUserData = testFixtures.createUser(userJsonData);
+        createdUserData = userTestFixtures.createUser(userJsonData);
+
         createdUserData.then().assertThat().statusCode(200);
         MatcherAssert.assertThat(createdUserData.as(UserDeserializer.class).getUser().getEmail(), equalTo(email));
+        MatcherAssert.assertThat(createdUserData.as(UserDeserializer.class).getUser().getName(), equalTo(name));
+        MatcherAssert.assertThat(createdUserData.as(UserDeserializer.class).isSuccess(), equalTo(true));
     }
 
     @Test
@@ -50,10 +51,11 @@ public class CreateUserTests extends TestFixtures {
         password = "123456";
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
-        createdUserData = testFixtures.createUser(userJsonData);
-        Response existUserData = testFixtures.createUser(userJsonData);
+        createdUserData = userTestFixtures.createUser(userJsonData);
+        Response existUserData = userTestFixtures.createUser(userJsonData);
 
         existUserData.then().assertThat().statusCode(403);
+        MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).isSuccess(), equalTo(false));
         MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).getMessage(), equalTo("User already exists"));
     }
 
@@ -64,10 +66,11 @@ public class CreateUserTests extends TestFixtures {
         password = "123456";
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
-        createdUserData = testFixtures.createUser(userJsonData);
-        Response existUserData = testFixtures.createUser(userJsonData);
+        createdUserData = userTestFixtures.createUser(userJsonData);
+        Response existUserData = userTestFixtures.createUser(userJsonData);
 
         existUserData.then().assertThat().statusCode(403);
+        MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).isSuccess(), equalTo(false));
         MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).getMessage(), equalTo("Email, password and name are required fields"));
     }
 
@@ -78,10 +81,11 @@ public class CreateUserTests extends TestFixtures {
         password = null;
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
-        createdUserData = testFixtures.createUser(userJsonData);
-        Response existUserData = testFixtures.createUser(userJsonData);
+        createdUserData = userTestFixtures.createUser(userJsonData);
+        Response existUserData = userTestFixtures.createUser(userJsonData);
 
         existUserData.then().assertThat().statusCode(403);
+        MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).isSuccess(), equalTo(false));
         MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).getMessage(), equalTo("Email, password and name are required fields"));
     }
 
@@ -92,10 +96,11 @@ public class CreateUserTests extends TestFixtures {
         password = "123456";
         name = null;
         UserSerializer userJsonData = new UserSerializer(email, password, name);
-        createdUserData = testFixtures.createUser(userJsonData);
-        Response existUserData = testFixtures.createUser(userJsonData);
+        createdUserData = userTestFixtures.createUser(userJsonData);
+        Response existUserData = userTestFixtures.createUser(userJsonData);
 
         existUserData.then().assertThat().statusCode(403);
+        MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).isSuccess(), equalTo(false));
         MatcherAssert.assertThat(existUserData.as(UserDeserializer.class).getMessage(), equalTo("Email, password and name are required fields"));
     }
 }
