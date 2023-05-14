@@ -1,0 +1,181 @@
+[ {
+  "uid" : "e486bc9a2cd3ecdf",
+  "name" : "createExistUserExpected403",
+  "time" : {
+    "start" : 1684066119004,
+    "stop" : 1684066119505,
+    "duration" : 501
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "61c76578b4c9cb50",
+  "name" : "createUserWithoutPasswordExpected403",
+  "time" : {
+    "start" : 1684066120058,
+    "stop" : 1684066120224,
+    "duration" : 166
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5aa3fca6c63566a5",
+  "name" : "createNewOrderWithAuthWith2Ingredients",
+  "time" : {
+    "start" : 1684066110979,
+    "stop" : 1684066113319,
+    "duration" : 2340
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b5fab261d39b2cf8",
+  "name" : "createNewOrderWithAuthWithoutIncorrectIngredient",
+  "time" : {
+    "start" : 1684066115496,
+    "stop" : 1684066115960,
+    "duration" : 464
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1b86604bfa3891c",
+  "name" : "createNewOrderWithAuthWithIncorrectIngredient",
+  "time" : {
+    "start" : 1684066115003,
+    "stop" : 1684066115492,
+    "duration" : 489
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "851d6228c330461a",
+  "name" : "updateUserData[Test for user: user3@example.com]",
+  "time" : {
+    "start" : 1684066116890,
+    "stop" : 1684066117605,
+    "duration" : 715
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "956bbf42487cc75b",
+  "name" : "createUserWithoutNameExpected403",
+  "time" : {
+    "start" : 1684066120227,
+    "stop" : 1684066120407,
+    "duration" : 180
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4e3bbcfb2aab67be",
+  "name" : "updateUserData[Test for user: user4@example.com]",
+  "time" : {
+    "start" : 1684066117611,
+    "stop" : 1684066118065,
+    "duration" : 454
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "426311bc41367e60",
+  "name" : "createUniqueUserExpected200",
+  "time" : {
+    "start" : 1684066119507,
+    "stop" : 1684066119884,
+    "duration" : 377
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6cdef654ea651463",
+  "name" : "getUserOrderWithAuth",
+  "time" : {
+    "start" : 1684066120894,
+    "stop" : 1684066122043,
+    "duration" : 1149
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "78e9c18b143356c7",
+  "name" : "updateUserData[Test for user: user6@example.com]",
+  "time" : {
+    "start" : 1684066118549,
+    "stop" : 1684066118999,
+    "duration" : 450
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d12aba7f4f74444",
+  "name" : "updateUserData[Test for user: user2@example.com]",
+  "time" : {
+    "start" : 1684066116401,
+    "stop" : 1684066116888,
+    "duration" : 487
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "98f9ed54b805307b",
+  "name" : "createNewOrderWithAuthWithIngredien",
+  "time" : {
+    "start" : 1684066113357,
+    "stop" : 1684066114247,
+    "duration" : 890
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "eb2ea0ddbab82ccf",
+  "name" : "updateUserData[Test for user: user5@example.com]",
+  "time" : {
+    "start" : 1684066118067,
+    "stop" : 1684066118547,
+    "duration" : 480
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "41f103b027df76f6",
+  "name" : "updateUserData[Test for user: user1@example.com]",
+  "time" : {
+    "start" : 1684066115971,
+    "stop" : 1684066116397,
+    "duration" : 426
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9bd1bb20d46b4b89",
+  "name" : "getUserOrderWithoutAuth",
+  "time" : {
+    "start" : 1684066120415,
+    "stop" : 1684066120890,
+    "duration" : 475
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4b434fcf145b2470",
+  "name" : "createNewOrderWithoutAuthWith2Ingrediens",
+  "time" : {
+    "start" : 1684066114253,
+    "stop" : 1684066115000,
+    "duration" : 747
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8e43b4611d1394b8",
+  "name" : "createUserWithoutEmailExpected403",
+  "time" : {
+    "start" : 1684066119885,
+    "stop" : 1684066120056,
+    "duration" : 171
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

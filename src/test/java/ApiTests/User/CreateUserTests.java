@@ -32,7 +32,7 @@ public class CreateUserTests {
     @Test
     @Description("Create new user with unique data. Return 200 and check email, name, password")
     public void createUniqueUserExpected200(){
-        email = "lutic@mail.ru";
+        email = "lutic2@mail.ru";
         password = "123456";
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
@@ -47,7 +47,7 @@ public class CreateUserTests {
     @Test
     @Description("Create new user with exist data. Return 403")
     public void createExistUserExpected403(){
-        email = "lutic@mail.ru";
+        email = "lutic2@mail.ru";
         password = "123456";
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
@@ -77,7 +77,7 @@ public class CreateUserTests {
     @Test
     @Description("Create new user without password. Return 403")
     public void createUserWithoutPasswordExpected403(){
-        email = "lutic@mail.ru";
+        email = "lutic2@mail.ru";
         password = null;
         name = "Lutic";
         UserSerializer userJsonData = new UserSerializer(email, password, name);
@@ -92,7 +92,7 @@ public class CreateUserTests {
     @Test
     @Description("Create new user without name. Return 403")
     public void createUserWithoutNameExpected403(){
-        email = "lutic@mail.ru";
+        email = "lutic2@mail.ru";
         password = "123456";
         name = null;
         UserSerializer userJsonData = new UserSerializer(email, password, name);

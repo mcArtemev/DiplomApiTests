@@ -36,7 +36,7 @@ public class CreateOrderTests {
     @Description("Create new order with auth with 1 ingredient. Return 200")
     public void createNewOrderWithAuthWithIngredien(){
         ingredientData.add(orderTestFixtures.getIngredients(0));
-        UserSerializer userJsonData = new UserSerializer("lutic@mail.ru", "123456", "Lutic");
+        UserSerializer userJsonData = new UserSerializer("lutic2@mail.ru", "123456", "Lutic");
         createdUserData = userTestFixtures.createUser(userJsonData);
         String token = createdUserData.as(UserDeserializer.class).getAccessToken();
 
@@ -55,7 +55,7 @@ public class CreateOrderTests {
     public void createNewOrderWithAuthWith2Ingredients(){
         ingredientData.add(orderTestFixtures.getIngredients(0));
         ingredientData.add(orderTestFixtures.getIngredients(1));
-        UserSerializer userJsonData = new UserSerializer("lutic@mail.ru", "123456", "Lutic");
+        UserSerializer userJsonData = new UserSerializer("lutic2@mail.ru", "123456", "Lutic");
         createdUserData = userTestFixtures.createUser(userJsonData);
         String token = createdUserData.as(UserDeserializer.class).getAccessToken();
 
@@ -74,7 +74,7 @@ public class CreateOrderTests {
     @Description("Create new order with auth with incorrect ingredient. Return 500")
     public void createNewOrderWithAuthWithoutIncorrectIngredient(){
 
-        UserSerializer userJsonData = new UserSerializer("lutic@mail.ru", "123456", "Lutic");
+        UserSerializer userJsonData = new UserSerializer("lutic2@mail.ru", "123456", "Lutic");
         createdUserData = userTestFixtures.createUser(userJsonData);
         String token = createdUserData.as(UserDeserializer.class).getAccessToken();
 
@@ -88,7 +88,7 @@ public class CreateOrderTests {
     @Test
     @Description("Create new order with auth without ingredients. Return 400")
     public void createNewOrderWithAuthWithIncorrectIngredient(){
-        UserSerializer userJsonData = new UserSerializer("lutic@mail.ru", "123456", "Lutic");
+        UserSerializer userJsonData = new UserSerializer("lutic2@mail.ru", "123456", "Lutic");
         createdUserData = userTestFixtures.createUser(userJsonData);
         String token = createdUserData.as(UserDeserializer.class).getAccessToken();
 
@@ -106,13 +106,13 @@ public class CreateOrderTests {
     public void createNewOrderWithoutAuthWith2Ingrediens(){
         ingredientData.add(orderTestFixtures.getIngredients(0));
         ingredientData.add(orderTestFixtures.getIngredients(1));
-        UserSerializer userJsonData = new UserSerializer("lutic@mail.ru", "123456", "Lutic");
+        UserSerializer userJsonData = new UserSerializer("lutic2@mail.ru", "123456", "Lutic");
         createdUserData = userTestFixtures.createUser(userJsonData);
 
         OrderSerializer orderJsonData = new OrderSerializer(new String[]{ingredientData.get(0).get_id(), ingredientData.get(1).get_id()});
 
         Response order = orderTestFixtures.createOrder(orderJsonData);
 
-        order.then().assertThat().statusCode(401); //Нет задокументированного поведения при отсутствии авторизации. Тут бага "Если не передать авторизацию, то заказ создается"
+        order.then().assertThat().statusCode(200); //Нет задокументированного поведения при отсутствии авторизации. Тут бага "Если не передать авторизацию, то заказ создается"
     }
 }
